@@ -1,0 +1,34 @@
+input{
+  background: none;
+  color: #878d8d;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #878d8d;
+  text-align: center;
+}
+input:focus{
+  background: none;
+  color: #878d8d;
+  border-color: #878d8d;
+  box-shadow: none;
+}
+
+input.invalid {
+  border-color: #ec6271;
+  background: transparent;
+}
+
+button{
+  box-shadow: none !important;
+}
+
+.container{
+  position: relative;
+  margin-top: 20%;
+}
+
+.row {
+  margin: 0;
+  top: 50%;
+}
+

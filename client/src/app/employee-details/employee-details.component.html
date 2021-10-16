@@ -1,0 +1,69 @@
+<div class="jumbotron py-3 text-center">
+  <i class="fa-solid fa-car fa-lg" style="color: #878d8d"></i>
+  <br>
+  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
+  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
+  <br>
+  <i class="fa-solid fa-car fa-lg" style="color: #878d8d"></i>
+  <i class="fa-solid fa-car fa-lg" style="color: #878d8d"></i>
+  <i class="fa-solid fa-car fa-lg" style="color: #878d8d"></i>
+  <br>
+  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
+  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
+  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
+  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
+  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
+</div>
+
+<div class="row relative">
+  <div class="col-2">
+    <app-employee-detail-form></app-employee-detail-form>
+  </div>
+  <div class="col-md-10" style="border-left: 2px solid #ec6271; position: relative ">
+    <div class="input-group searching">
+      <div class="form-group">
+        <input class="form-control form-control-lg " placeholder="Search by name" [(ngModel)]="searchStr">
+      </div>
+    </div>
+    <table class="table">
+      <thead class="thead-light text-secondary">
+      <tr>
+        <th (click)="sort('name')"><i class="fas fa-sort"></i> Name</th>
+        <th (click)="sort('surname')" ><i class="fas fa-sort"></i> Surname</th>
+        <th (click)="sort('jobTitle')" ><i class="fas fa-sort"></i> Job</th>
+        <th (click)="sort('phone')" ><i class="fas fa-sort"></i> Phone</th>
+        <th (click)="sort('createdAt')" ><i class="fas fa-sort"></i> CreatedAt</th>
+        <th (click)="sort('email')" ><i class="fas fa-sort"></i> Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let em of service.list |
+          searchEmployees: searchStr |
+          paginate: {itemsPerPage:10, currentPage: p} |
+          orderBy: key : reverse "
+      >
+        <td (click)="populateForm(em)">{{em.name}}</td>
+        <td (click)="populateForm(em)">{{em.surname}}</td>
+        <td (click)="populateForm(em)">{{em.jobTitle}}</td>
+        <td (click)="populateForm(em)">{{em.phoneNumber}}</td>
+        <td (click)="populateForm(em)">{{em.createdAt | date:'medium'}}</td>
+        <td (click)="populateForm(em)">{{em.email}}</td>
+        <td>{{em.select}}</td>
+        <td>
+          <i class="far fa-trash-alt fa-lg" (click)="onDelete(em.employeeId)"></i>
+        </td>
+        <td>
+          <mat-checkbox class="my" ></mat-checkbox>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="justify-content">
+      <pagination-controls class="paginator" style="position: absolute;" (pageChange)="p = $event"></pagination-controls>
+      <i class="far fa-trash-alt fa-xl d-flex justify-content-end p-2 text-warning" style="color: #878d8d"></i>
+    </div>
+  </div>
+</div>
+

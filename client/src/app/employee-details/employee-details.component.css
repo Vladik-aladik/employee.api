@@ -1,0 +1,49 @@
+.paginator{
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  color: #878d8d;
+}
+
+.paginator /deep/ .ngx-pagination button{
+  color: #ec6271;
+}
+
+.paginator /deep/ .ngx-pagination .current {
+  background: none;
+  color: #ec6271;
+}
+
+.paginator /deep/ .ngx-pagination a:hover, .ngx-pagination button:hover {
+  background: none;
+  color: #ec6271;
+}
+
+input{
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+input:focus{
+  background: none;
+  color: #878d8d;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #ffc107 !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #ffc107 !important;
+}
+
+::ng-deep mat-checkbox.my .mat-checkbox-frame{
+  border-color: #ffc107;
+}
+
+input:focus{
+  border-color: #878d8d;
+  box-shadow: none;
+}
+
+
+

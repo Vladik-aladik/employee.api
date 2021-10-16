@@ -1,0 +1,17 @@
+button.text-success{
+  text-decoration-color: #878d8d;
+  border-width: 2px;
+}
+button.text-warning{
+  text-decoration-color: #878d8d;
+  border-width: 2px;
+}
+input:focus{
+  background: none;
+  color: #878d8d;
+  border-color: #878d8d;
+  box-shadow: none;
+}
+input{
+  font-family: 'Helvetica Neue', sans-serif;
+}

@@ -1,0 +1,62 @@
+.form-group label {
+  color: grey;
+}
+
+.form-group input {
+  font-weight: 50;
+  background: #212121;
+  border-color: #878d8d;
+  color: #878d8d;
+}
+
+.form-group input::placeholder {
+  color: #878d8d;
+  font-weight: 50;
+}
+
+thead th{
+  font-weight: 400;
+  color: #ec6271;
+  cursor: pointer;
+}
+
+.fa-sort:hover{
+  color: #878d8d;
+}
+
+tbody td{
+  color: #878d8d;
+}
+
+table tbody tr:hover {
+  cursor: pointer;
+  background: #303337;
+}
+
+input.invalid {
+  border-color: #ec6271;
+  background: transparent;
+}
+
+body{
+  background: #212121;
+}
+
+input:focus{
+  color: #212121;
+}
+
+i:hover{
+  color: #ec6271;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto,
+  "Helvetica Neue",
+  sans-serif;
+}

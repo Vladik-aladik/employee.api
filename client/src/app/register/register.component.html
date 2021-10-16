@@ -1,0 +1,67 @@
+<form
+  autocomplete="off"
+  class="col-12"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+<div class="container">
+  <div class="row d-flex justify-content-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+      <div class="card-body p-5 text-center">
+        <div class="form-outline form-white mb-5">
+          <input
+            type="text"
+            class="rounded-0 form-control form-control-lg"
+            placeholder="Name"
+            name="Name"
+            #name="ngModel"
+            [(ngModel)]="service.formData.name"
+            [class.invalid]="name.invalid && name.touched"
+            required
+          />
+        </div>
+        <div class="form-outline form-white mb-5">
+          <input
+            type="email"
+            id="typeEmailX"
+            class="rounded-0 form-control form-control-lg"
+            placeholder="Email"
+            name="email"
+            #email="ngModel"
+            [(ngModel)]="service.formData.email"
+            [class.invalid]="email.invalid && email.touched"
+            required
+          />
+        </div>
+        <div class="form-outline form-white mb-5">
+          <input
+            type="password"
+            class="rounded-0 form-control form-control-lg"
+            placeholder="Password"
+            name="password"
+            #password="ngModel"
+            [(ngModel)]="service.formData.password"
+            [class.invalid]="password.invalid && password.touched"
+            required
+
+          />
+        </div>
+        <div class="form-outline form-white mb-5">
+          <input
+            type="password"
+            class="rounded-0 form-control form-control-lg"
+            placeholder="Confirm password"
+            name="confirm-password"
+            required
+
+          />
+        </div>
+        <div class="form-group d-flex justify-content-between">
+          <button class="btn border-warning btn-sm btn-block text-warning" type="reset" [disabled]="form.invalid">REGISTER</button>
+          <button class="btn border-success btn-sm btn-block text-success" routerLink="/login">LOGIN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>

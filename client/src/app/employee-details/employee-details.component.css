@@ -45,5 +45,10 @@ input:focus{
   box-shadow: none;
 }
 
+.row {
+  padding-top: 200px;
+  top: 50px;
+}
+
 
 

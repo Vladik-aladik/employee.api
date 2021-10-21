@@ -16,6 +16,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSelectModule} from "@angular/material/select";
 import { RegisterComponent } from './register/register.component';
+import { FooterComponent } from './shared/layouts/footer/footer.component';
+import {NavbarComponent} from "./shared/layouts/navbar/navbar.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RegisterComponent } from './register/register.component';
     EmployeeDetailFormComponent,
     SearchPipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

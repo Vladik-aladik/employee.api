@@ -1,0 +1,33 @@
+.footerholder {
+  background: none;
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  font-size: 20px;
+  font-family: Roboto,
+  "Helvetica Neue",
+  sans-serif;
+}
+.footer {
+  color: #878d8d;
+}
+
+a{
+  color: #878d8d;
+  text-decoration: none;
+}
+.fa-instagram:hover{
+  color: #C13584;
+}
+
+.fa-facebook-square:hover{
+  color: #6577B3;
+}
+.fa-github:hover{
+  color: #f5f5f5;
+}
+
+.fa-steam:hover{
+  color: #2a475e;
+}
+

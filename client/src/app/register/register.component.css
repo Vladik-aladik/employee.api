@@ -22,13 +22,9 @@ button{
   box-shadow: none !important;
 }
 
-.container{
-  position: relative;
-  margin-top: 20%;
-}
 
 .row {
-  margin: 0;
+  padding-top: 200px;
   top: 50%;
 }
 

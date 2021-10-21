@@ -1,20 +1,4 @@
-<div class="jumbotron py-3 text-center">
-  <i class="fa-solid fa-car fa-lg" style="color: #878d8d"></i>
-  <br>
-  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
-  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
-  <br>
-  <i class="fa-solid fa-car fa-lg" style="color: #878d8d"></i>
-  <i class="fa-solid fa-car fa-lg" style="color: #878d8d"></i>
-  <i class="fa-solid fa-car fa-lg" style="color: #878d8d"></i>
-  <br>
-  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
-  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
-  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
-  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
-  <i class="fa-solid fa-car fa-lg" style="color: #ec6271"></i>
-</div>
-
+<app-navbar></app-navbar>
 <div class="row relative">
   <div class="col-2">
     <app-employee-detail-form></app-employee-detail-form>
@@ -22,7 +6,7 @@
   <div class="col-md-10" style="border-left: 2px solid #ec6271; position: relative ">
     <div class="input-group searching">
       <div class="form-group">
-        <input class="form-control form-control-lg " placeholder="Search by name" [(ngModel)]="searchStr">
+        <input class="form-control form-control-lg " placeholder="Search by everything" [(ngModel)]="searchStr">
       </div>
     </div>
     <table class="table">
@@ -36,6 +20,7 @@
         <th (click)="sort('email')" ><i class="fas fa-sort"></i> Email</th>
         <th></th>
         <th></th>
+        <th><i class="far fa-trash-alt" (click)="show()"></i></th>
       </tr>
       </thead>
       <tbody>
@@ -55,15 +40,27 @@
           <i class="far fa-trash-alt fa-lg" (click)="onDelete(em.employeeId)"></i>
         </td>
         <td>
-          <mat-checkbox class="my" ></mat-checkbox>
+          <mat-checkbox
+            class="my"
+            (change)="$event.checked? (isChecked = true) : isChecked = false; candidateToDelete($event,isChecked, em);"
+            *ngIf="showMe"
+          ></mat-checkbox>
         </td>
       </tr>
       </tbody>
     </table>
     <div class="justify-content">
       <pagination-controls class="paginator" style="position: absolute;" (pageChange)="p = $event"></pagination-controls>
-      <i class="far fa-trash-alt fa-xl d-flex justify-content-end p-2 text-warning" style="color: #878d8d"></i>
+      <i
+        *ngIf="showMe"
+        class="far fa-trash-alt
+      fa-xl d-flex
+      justify-content-end p-2
+      text-warning" style="color: #878d8d"
+         (click)="deleteMany()"
+      ></i>
     </div>
   </div>
 </div>
+<app-footer></app-footer>
 

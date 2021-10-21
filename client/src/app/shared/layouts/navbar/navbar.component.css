@@ -1,0 +1,12 @@
+.navbar{
+  position: absolute;
+  right: 20px;
+  top:20px;
+}
+a{
+  color: #ec6271;
+  text-decoration: none;
+}
+a:hover{
+  color: #878d8d;
+}

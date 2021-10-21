@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {EmployeeModel} from "./employee.model";
+import application from "@angular-devkit/build-angular/src/babel/presets/application";
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,11 @@ export class EmployeeService {
     this.http.get(this.baseUrl)
       .toPromise()
       .then(res =>this.list = res as EmployeeModel[]);
+  }
+
+  deleteMultiple(employeeIds: number[]) {
+    this.http.delete(`${this.baseUrl}`, {headers:{},body:employeeIds}).subscribe(()=>{
+      this.refreshList()
+    })
   }
 }

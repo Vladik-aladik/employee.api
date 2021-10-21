@@ -96,6 +96,17 @@ namespace EmployeesAPI.Controllers
 
             return NoContent();
         }
+    
+        [HttpDelete]
+        public async Task<IActionResult> DeleteMult(IEnumerable<int> Ids)
+        {
+            foreach (var employeeId in Ids)
+            {
+                _context.Employees.RemoveRange(_context.Employees.Where(i => i.EmployeeId == employeeId));
+            }
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
 
         private bool EmployeeExists(int id)
         {

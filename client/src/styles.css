@@ -24,6 +24,10 @@ thead th{
   color: #878d8d;
 }
 
+.fa-trash-alt:hover{
+  color: #878d8d;
+}
+
 tbody td{
   color: #878d8d;
 }
